@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+</head>
+<body>
+    <header>
+        <nav>
+            <section id="section1">
+            <div id="welcome">
+                <h3>Welcome To Shopingo Store</h3>
+            </div>
+            <div id="middle"> 
+                <li class="middle_list" onmouseenter="mouseEnter(this)" onmouseout="mouseOut(this)">Track Order</li>
+                <li class="middle_list"  onmouseenter="mouseEnter(this)" onmouseout="mouseOut(this)">About</li>
+                <li class="middle_list"  onmouseenter="mouseEnter(this)" onmouseout="mouseOut(this)">Our Stores</li>
+                <li class="middle_list"  onmouseenter="mouseEnter(this)" onmouseout="mouseOut(this)">Blog</li>
+                <li class="middle_list"  onmouseenter="mouseEnter(this)" onmouseout="mouseOut(this)">Contact</li>
+                <li class="middle_list"  onmouseenter="mouseEnter(this)" onmouseout="mouseOut(this)">Help & FAQ</li>
+                <li class="middle_list"  onmouseenter="mouseEnter(this)" onmouseout="mouseOut(this)">USD</li>
+                <li class="middle_list"  onmouseenter="mouseEnter(this)" onmouseout="mouseOut(this)">ENG</li>
+            </div>
+            <div id="login">
+                <button onmouseenter="mouseEnter(this)" onmouseout="mouseOut(this)">login</button>
+                <button onmouseenter="mouseHover(this)" onmouseout="mouseLeave(this)">Register</button>
+            </div>
+            <section>
+        </nav>
+        <section id="section2">
+
+            <div id="logoName" onmouseenter="mouseHover(this)" onmouseout="mouseLeave(this)">
+                <h2>ShopingGo</h2>
+                <p>e-commerce</p>
+            </div>
+            <div id="search">
+                <ul>
+                    <li><input type="text" placeholder="Search.." name="search"> <button type="submit"><i class="fa fa-search" style="font-size: 18px;"></i></button></li>
+                    <li><i onmouseenter="mouseHover(this)" onmouseout="mouseLeave(this)" class="fa fa-headphones" style="font-size:36px"></i></li>
+                    <li onmouseenter="mouseHover(this)" onmouseout="mouseLeave(this)" style="width: 153px;">Call us +918308604968</li>                 
+            </ul>
+            </div>
+            <div id="icons">
+                <li><i onmouseenter="mouseHover(this)" onmouseout="mouseLeave(this)" class="fa fa-user" style="font-size:27px" aria-hidden="true"></i></li>
+                <li><i onmouseenter="mouseHover(this)" onmouseout="mouseLeave(this)" class="fa fa-heart-o" style="font-size:27px;"></i></li>
+                <li><i onmouseenter="mouseHover(this)" onmouseout="mouseLeave(this)" class="fa fa-shopping-cart" style="font-size:27px"></i></li>
+                
+            </div>
+    </section>
+    
+    <section id="menuItem">
+        <ul>
+            <li onmouseenter="mouseEnter(this)" onmouseout="mouseOut(this)">HOME</li>
+            <li onmouseenter="mouseEnter(this)" onmouseout="mouseOut(this)">CATEGORIES</li>
+            <li onmouseenter="mouseEnter(this)" onmouseout="mouseOut(this)" style="margin-left: 20px;"><select name="shop" id="shop">
+                <option value="retail">Shop</option>
+                <option value="shop1">shop1</option>
+            </select></li>
+            <li onmouseenter="mouseEnter(this)" onmouseout="mouseOut(this)">ABOUT</li>
+            <li onmouseenter="mouseEnter(this)" onmouseout="mouseOut(this)">OUR STORE</li>
+            <li onmouseenter="mouseEnter(this)" onmouseout="mouseOut(this)">ACCOUNT</li>
+            <li onmouseenter="mouseEnter(this)" onmouseout="mouseOut(this)">BLOG</li>
+        </ul>
+    </section>
+    </header>
+    <div id="img">
+        <div class="shopNow">
+            <h2>New Trending</h2>
+            <h1>Women Fashion</h1>
+            <p>last call up to 15%</p>
+            <input type="button" value="Shop Now">
+        </div>
+    </div>
+    
+    <section id="wear">
+        <div class="box skyblue">
+            <div class="category">
+               
+                <h1>MENS WEAR</h1>
+                <p>STARTING AT $9</p>
+                <input type="button" value="Shop Now">
+            </div>
+        </div>
+        <div class="box lightpink">
+            <div class="category">
+             
+                <h1>WOMENS WEAR</h1>
+                <p>STARTING AT $9</p>
+                <input type="button" value="Shop Now">
+            </div>
+        </div>
+        <div class="box lightgreen">
+            <div class="category"> 
+                <h1>KIDS WEAR</h1>
+                <p>STARTING AT $9</p>
+                <input type="button" value="Shop Now"></div>
+        </div>
+
+    </section>
+    <script src="./home.js"></script>
+</body>
+</html>
