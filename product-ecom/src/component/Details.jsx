@@ -1,21 +1,36 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import Loading from "./Loading";
 import axios from "../utils/axios";
+import { ProductContext } from "../utils/Context";
 const Details = () => {
+  const navigate = useNavigate();
+
+  const [product, setProduct] = useContext(ProductContext);
   const [p, setP] = useState(null);
   const { id } = useParams();
 
-  const getSingleProduct = async (id) => {
-    try {
-      const { data } = await axios.get(`/products/${id}`);
+  // const getSingleProduct = async (id) => {
+  //   try {
+  //     const { data } = await axios.get(`/products/${id}`);
 
-      setP(data);
-    } catch (error) {}
+  //     setP(data);
+  //   } catch (error) {}
+  // };
+
+  const handleDelete = (id) => {
+    console.log(id);
+    const filteredProduct = product.filter((p) => p.id !== id);
+    setProduct(filteredProduct);
+    localStorage.setItem("product", JSON.stringify(filteredProduct));
+    navigate("/");
   };
 
   useEffect(() => {
-    getSingleProduct(id);
+    if (product) {
+      setP(product.filter((p) => p.id == id)[0]);
+    }
+    // getSingleProduct(id);
   }, []);
 
   return (
@@ -43,13 +58,21 @@ const Details = () => {
               <i class="bx bxs-star-half"></i>
             </p>
             <div className="flex gap-4 mt-2">
-              <Link className="px-5 py-2 bg-blue-400 w-[15%] text-center rounded-lg font-semibold shadow-lg hover:bg-blue-500 transition-all ease-in-out duration-200">
+              <Link
+                to={`/edit/${p.id}`}
+                className="px-5 py-2 bg-blue-400 w-[15%] text-center rounded-lg font-semibold shadow-lg hover:bg-blue-500 transition-all ease-in-out duration-200"
+              >
                 Edit
               </Link>
 
-              <Link className="px-5 py-2 bg-blue-400 w-[15%] text-center rounded-lg font-semibold shadow-lg hover:bg-blue-500 transition-all ease-in-out duration-200">
+              <button
+                onClick={() => {
+                  handleDelete(p.id);
+                }}
+                className="px-5 py-2 bg-blue-400 w-[15%] text-center rounded-lg font-semibold shadow-lg hover:bg-blue-500 transition-all ease-in-out duration-200"
+              >
                 Delete
-              </Link>
+              </button>
             </div>
           </div>
         </div>

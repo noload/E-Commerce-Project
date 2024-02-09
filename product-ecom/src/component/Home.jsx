@@ -10,21 +10,23 @@ const Home = () => {
   const category = decodeURIComponent(search.split("=")[1]);
   const [product, setProduct] = useContext(ProductContext);
   const [filterProduct, setFilterProduct] = useState(null);
-  const getProductsByCategory = async () => {
-    try {
-      const { data } = await axios.get(`/products/category/${category}`);
-      setFilterProduct(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+
+  // const getProductsByCategory = async () => {
+  //   try {
+  //     const { data } = await axios.get(`/products/category/${category}`);
+  //     setFilterProduct(data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   useEffect(() => {
     if (!filterProduct || category == "undefined") {
       setFilterProduct(product);
     }
     if (category != "undefined") {
-      getProductsByCategory();
+      // getProductsByCategory();
+      setFilterProduct(product.filter((p) => p.category == category));
     }
   }, [category, product]);
   return (
